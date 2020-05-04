@@ -9,8 +9,8 @@ Install the library with `npm install roundom`
 ```javascript
 import roundom from 'roundom';
 
-console.log(roundom([1, 0.9, -1.9]);      // <- [0, 1, -2] (90%) or [0, 0, -1] (10%)
-console.log(roundom([1, 0.9, -1.9], 0.1); // <- [0, 1, -2] (100%) given fixed seed
+console.log(roundom([1, 0.9, -1.9]);      // <- [1, 1, -2] (90%) or [1, 0, -1] (10%)
+console.log(roundom([1, 0.9, -1.9], 0.1); // <- [1, 1, -2] (100%) given fixed seed
 ```
 
 [downloads-image]: https://img.shields.io/npm/dm/roundom.svg
