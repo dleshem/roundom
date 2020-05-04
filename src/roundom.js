@@ -1,39 +1,17 @@
 
-const round = (x, r) => {
-    if (Number.isInteger(x)) {
-        return x;
-    } else {
+const roundom = (array, r = Math.random()) => {
+    let acc = r;
+    return array.map(x => {
         const integer = Math.floor(x);
         const fractional = x - integer;
-        if (r < fractional) {
+
+        acc += fractional;
+        if (acc >= 1) {
+            acc -= 1;
             return integer + 1;
         } else {
             return integer;
         }
-    }
-};
-
-const roundom = (array, r = Math.random()) => {
-    let slack = 0;
-    return array.map(x => {
-        let rounded;
-        if (Number.isInteger(x)) {
-            rounded = x;
-        } else {
-            const xPlusSlack = x + slack;
-
-            const max = Math.ceil(x);
-            const min = Math.floor(x);
-            if (xPlusSlack >= max) {
-                rounded = max;
-            } else if (xPlusSlack <= min) {
-                rounded = min;
-            } else {
-                rounded = round(x, r);
-            }
-        }
-        slack += (x - rounded);
-        return rounded ? rounded : 0; // Convert negative zeros to zeros
     });
 };
 

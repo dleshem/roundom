@@ -17,21 +17,21 @@ describe('roundom', () => {
     });
 
     it ('rounds down when needed', () => {
-        const r = 0.5;
+        const r = 0.5 - Number.EPSILON;
         const array = [0.5, -0.5];
         const rounded = roundom(array, r);
         expect(rounded).to.deep.equal([0, 0]);
     });
 
     it ('rounds up when needed', () => {
-        const r = 0.5 - Number.EPSILON;
+        const r = 0.5;
         const array = [0.5, -0.5];
         const rounded = roundom(array, r);
         expect(rounded).to.deep.equal([1, -1]);
     });
 
     it ('conserves expected values', () => {
-        const array = [0.5, -0.5, 0, 1, -1, 0.1, -0.1];
+        const array = [0.6, 0.5, -1.1];
 
         const n = 100000;
         const sum = array.map(x => 0);
