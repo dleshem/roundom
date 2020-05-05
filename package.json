@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Round an array, conserving both sum and individual expected values",
   "main": "dist/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "mocha --compilers js:babel-register",
     "compile": "babel -d dist/ src/",
